@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet"  href="/style.css">
+
+</head>
+<body>
+    <h1><%= kindOfDay %></h1>
+
+    <h1> Write your list here 👇</h1>
+    <form action="/" method="post">
+        <input type="text" name="newItems">
+        <input type="submit" value="Add">
+    </form>
+
+    <ul>
+        <% for (let i = 0; i < newListItems.length; i++) { %>
+          <li>
+            <%= newListItems[i] %>
+            <a href="/delete/<%= i %>" class="delete">&#10006;</a>
+          </li>
+        <% } %>
+      </ul>
+      
+</body>
+</html>
